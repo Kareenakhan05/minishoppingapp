@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stationary's Products</title>
+  <link rel="stylesheet" href="/css files/kidstyles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">MyStore</div>
+      <ul class="nav-links">
+        <li><a href="/index">Home</a></li>
+        <li><a href="/women" class="active">Women</a></li>
+        <li><a href="/men">Men</a></li>
+        <li><a href="/kids">Kids</a></li>
+        <li><a href="/jewellery">Jewllery</a></li>
+        <li><a href="/stationary">Stationary</a></li>
+      </ul>
+      <div class="cart" id="cart">
+        <img src="/images/cart-icon.png" alt="Cart" id="cart-icon">
+        <span id="cart-count">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <h2>Stationary's Products</h2>
+    <div class="product-grid" id="stationary-product-grid">
+      <!-- Women's products will be dynamically added here using JavaScript -->
+    </div>
+  </section>
+  
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-content">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p id="total-amount">Total: ₹0.00</p>
+      
+      <button id="close-cart-btn">Close</button>
+      <button id="next-btn" onclick="goToDelivery()">Next</button>
+    </div>
+  </div>
+  <!-- Notification Container -->
+<div id="notification" class="notification"></div>
+
+
+
+<div id="delivery-form" style="display:none;">
+  <h3>Delivery Address</h3>
+  <form id="address-form">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="text" id="address" placeholder="Address" required />
+      <input type="text" id="pincode" placeholder="Pincode" required />
+      <input type="tel" id="mobile" placeholder="Mobile Number" required />
+      <button  id="next-btn" type="button" onclick="goToPayment()">Next</button>
+  </form>
+</div>
+
+<div id="payment-method" style="display:none;">
+  <h3>Choose Payment Method</h3>
+  <select id="payment-options">
+      <option value="cod">Cash on Delivery</option>
+      <option value="credit">Credit Card</option>
+  </select>
+  <!-- Instead of "Next", directly show "Place Your Order" button after selecting a payment method -->
+  <button id="place-order-btn" type="button" onclick="placeOrder()">Place Your Order</button>
+</div>
+
+<div id="confirmation" style="display:none;">
+  <h3>Your order is placed!</h3>
+</div>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 MyStore. All rights reserved.</p>
+  </footer>
+
+  <script src="/js files/stationary.js"></script>
+</body>
+</html>
